@@ -1,4 +1,4 @@
-# src/amazon_scrapper.py
+# src/scraper/amazon_scraper.py
 from bs4 import BeautifulSoup
  
 import logging

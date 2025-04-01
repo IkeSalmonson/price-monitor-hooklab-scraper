@@ -1,3 +1,4 @@
+#src/core/config.py
 import os
 import pathlib
 from functools import lru_cache

@@ -1,7 +1,7 @@
-# src/scrapper.py
+# src/scraper/scraper.py
 from abc import ABC, abstractmethod
-from .magalu_scrapper import MagaluProductScraper
-from .amazon_scrapper import AmazonProductScraper
+from .magalu_scraper import MagaluProductScraper
+from .amazon_scraper import AmazonProductScraper
 import re
 
 class ProductScraper(ABC):

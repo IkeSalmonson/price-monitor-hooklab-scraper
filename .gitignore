@@ -128,7 +128,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+#.env ## necessário para facilitar execução
 .venv
 env/
 venv/

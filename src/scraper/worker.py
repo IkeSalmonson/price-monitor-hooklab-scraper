@@ -1,6 +1,6 @@
-# src/worker.py
+# src/scraper/worker.py
 from celery import shared_task
-from .scrapper import ProductScraper
+from .scraper import ProductScraper
 import os
 import requests
 import json
@@ -50,7 +50,7 @@ def scrape_product(url):
         elif re.search(r'amazon\.com\.br', url):
             example_num = 2
  
-        with open(f'./scrapper/dev_examples/exampleHTML{example_num}.html', 'r', encoding='utf-8') as arquivo:
+        with open(f'./scraper/dev_examples/exampleHTML{example_num}.html', 'r', encoding='utf-8') as arquivo:
             html_content = arquivo.read()
 
         if scraper:
@@ -62,8 +62,8 @@ def scrape_product(url):
             save_status = save_data(product_data)
             return {"message": f"Scraping bem-sucedido de {url}", "data": product_data, "save_status": save_status}
         else:
-            logger.warning(f"Nenhum scrapper disponível para o domínio da URL: {url}")
-            return {"error": f"Nenhum scrapper disponível para o domínio da URL: {url}"}
+            logger.warning(f"Nenhum scraper disponível para o domínio da URL: {url}")
+            return {"error": f"Nenhum scraper disponível para o domínio da URL: {url}"}
 
     except requests.exceptions.RequestException as e:
         logger.error(f"Erro ao acessar a URL {url}: {e}")

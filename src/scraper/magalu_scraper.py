@@ -1,4 +1,4 @@
-# src/magalu_scrapper.py
+# src/scraper/magalu_scraper.py
 from bs4 import BeautifulSoup
  
 import logging

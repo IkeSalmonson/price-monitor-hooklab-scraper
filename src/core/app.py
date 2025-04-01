@@ -1,7 +1,7 @@
+#src/core/app.py
 from fastapi import FastAPI, Query 
 from utils.celery_utils import create_celery  
-#from scrapper.worker import divide , scrape_product  ## check if required
-from scrapper.worker import divide, scrape_product
+from scraper.worker import divide, scrape_product
 import celery.states as states
 
 
