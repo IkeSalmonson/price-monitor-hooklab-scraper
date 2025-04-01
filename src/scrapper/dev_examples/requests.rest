@@ -1,0 +1,19 @@
+#### Test hello FastAPI 
+GET http://localhost:8010/
+
+#### Test Shared Task Divide
+GET http://localhost:8010/divide/6/1
+
+
+#### Test check status shared task 
+GET http://localhost:8010/check/b5e107f1-a0e1-47f1-9da0-a3da8cd6a93d
+
+
+#### Send URL to scrape Magalu 
+GET http://localhost:8010/scrape?url=https://www.magazineluiza.com.br/jornada-api-na-pratica-brasport/p/hkbbj6e62g/li/otli/
+
+
+#### Send URL to scrape Amazon
+GET http://localhost:8010/scrape?url=https://www.amazon.com.br/Jornada-pr%C3%A1tica-Alessandro-Antonio-Brito/dp/658843197X/
+
+
