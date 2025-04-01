@@ -11,7 +11,7 @@ Solução para o desafio técnico de Desenvolvedor Python Pleno (Foco em Dados) 
 ```
 docker compose up --build  
 ```
-O monitor (Celery Flower) esta direcionado [Celery Flower localhost:5557](localhost:5557) <br>
+O monitor (Celery Flower) esta direcionado Celery Flower http://localhost:5557 <br>
 
 As requisições para extração de informação do produto são no formato: <br>
     http://localhost:8010/scrape?url={url} <br>
