@@ -1,10 +1,17 @@
 # src/scraper/magalu_scraper.py
-from bs4 import BeautifulSoup
- 
+"""
+Modulo com implementação dos metodos concretos para extrair os dados do produto da página do Magazine Luiza.
+"""
+
 import logging
+from bs4 import BeautifulSoup
+
 logger = logging.getLogger(__name__)
 
 class MagaluProductScraper( ):
+    """
+    Classe com metodos concretos para extrair os dados do produto da página do Magazine Luiza.
+    """
     def scrape_product(self, html_content: str) -> dict:
         """
         Extrai os dados do produto da página do Magazine Luiza.
@@ -71,6 +78,6 @@ class MagaluProductScraper( ):
                             "installment_number": num_installments,
                             "installment_value": installment_value,
                             "interest_free": "sem juros" in interest_info,
-                            "total_value": total_value.replace('R$', '').replace('\xa0', '').replace(',', '.') if total_value else installment_value.replace("R$&nbsp;", "")  
+                            "total_value": total_value.replace('R$', '').replace('\xa0', '').replace(',', '.') if total_value else installment_value.replace("R$&nbsp;", "")
                         })
         return installments_data

@@ -1,10 +1,14 @@
 # src/scraper/scraper.py
+""" Modulo com a função para definir e executar scraper de acordo com o input na aplicação"""
 from abc import ABC, abstractmethod
+import re
 from .magalu_scraper import MagaluProductScraper
 from .amazon_scraper import AmazonProductScraper
-import re
+
 
 class ProductScraper(ABC):
+    """ Classe abstrata para definir e executar scraper de acordo com o input na aplicação"""
+
     @abstractmethod
     def scrape_product(self, html_content: str) -> dict:
         """
@@ -27,4 +31,3 @@ class ProductScraper(ABC):
         else:
             return None
 
- 

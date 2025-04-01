@@ -1,18 +1,26 @@
 #src/core/app.py
-from fastapi import FastAPI, Query 
-from utils.celery_utils import create_celery  
+"""
+Modulo com a determinação do APP fastAPI  a ser gerado pelas instancias de container e suas rotas
+"""
+
+from fastapi import FastAPI, Query
+from celery import states
+from utils.celery_utils import create_celery
 from scraper.worker import divide, scrape_product
-import celery.states as states
 
 
 def create_app() -> FastAPI:
+    """
+    Implementação do APP fastAPI a ser gerado pela instancia de container e suas rotas
+    """
+
     app = FastAPI()
-    app.celery_app = create_celery()              
- 
+    app.celery_app = create_celery()
+
     @app.get("/")
     async def root():
         return {"message": "Hello World"}
-    
+
     @app.get("/divide/{param1}/{param2}")
     async def exec_divide(param1: int, param2: int)->str:
         task = app.celery_app.send_task('tasks.divide',  args=[param1, param2], kwargs={})
@@ -26,11 +34,11 @@ def create_app() -> FastAPI:
             return res.state
         else:
             return str(res.result)
-        
+
     @app.get("/scrape" )
     async def exec_scrape(url: str = Query(..., description="URL a ser analisada")) -> str:
         task = app.celery_app.send_task('tasks.scrape_product',   args=[url], kwargs={})
         response = f"<a href='{app.url_path_for('check_task', task_id=task.id)}'>check status de {task.id} </a>"
         return response
-    
+
     return app

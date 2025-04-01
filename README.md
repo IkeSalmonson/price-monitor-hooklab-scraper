@@ -23,9 +23,9 @@ GET http://localhost:8010/scrape?url=https://www.magazineluiza.com.br/jornada-ap
 GET http://localhost:8010/scrape?url=https://www.amazon.com.br/Jornada-pr%C3%A1tica-Alessandro-Antonio-Brito/dp/658843197X/
 
 #### Considerações 
-    A versão atual da aplicação depende de html salvos localmente nos exemplos de desenvolvimento. 
-    Ambos marketplaces colocam impedimentos a requests de sistemas automatizados e informam que é necessário utilizar meios aprovados por seus acordos de uso da plataforma.
-    
- 
+A versão atual da aplicação depende de html salvos localmente nos exemplos de desenvolvimento. 
+Ambos marketplaces colocam impedimentos a requests de sistemas automatizados e informam que é necessário utilizar meios aprovados por seus acordos de uso da plataforma.
 
+Execução de Pylint em ./src    
+    Pylint . :Your code has been rated at 6.98/10
 

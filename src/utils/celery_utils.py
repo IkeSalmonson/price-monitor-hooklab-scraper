@@ -1,7 +1,8 @@
+"""
+Modulo com configuração para uso do Celery
+"""
 from celery import current_app as current_celery_app
-
 from core.config import settings
-
 
 def create_celery():
     celery_app = current_celery_app

@@ -1,14 +1,16 @@
 # src/scraper/amazon_scraper.py
-from bs4 import BeautifulSoup
- 
+
 import logging
+from bs4 import BeautifulSoup
 logger = logging.getLogger(__name__)
 
 class AmazonProductScraper( ):
+    """
+    Classe com metodos concretos para extrair os dados do produto da página da Amazon.
+    """    
     def scrape_product(self, html_content: str) -> dict:
         """
         Extrai os dados do produto da página da Amazon.
-        Você precisará inspecionar o HTML da página para encontrar os seletores corretos.
         """
         logger.info("Iniciando scraping da Amazon")
  
